@@ -19,8 +19,6 @@ void sort(int n, int* ptr)
         printf("%d ", *(ptr + i));
     }
 }
- 
-// Driver code
 int main()
 {
     int n = 10;
