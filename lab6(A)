@@ -1,19 +1,19 @@
-//WAP for array implementation of stack(static implementation)
+//a)Write a program to convert infix into postfix operation using stack.
 #include <stdio.h>
 #include <ctype.h>
 #define SIZE 50            
 char stack[SIZE];
-int top=-1;       
+int top=-1;
 push(char elem)
-{                       
+{                  
     stack[++top]=elem;
 }
 char pop()
-{                      
+{                    
     return(stack[top--]);
 }
 int pr(char symbol)
-{                
+{               
 	if(symbol == '^')
 	{
 		return(3);
@@ -22,7 +22,7 @@ int pr(char symbol)
 	{
 		return(2);
 	}
-	else if(symbol == '+' || symbol == '-')
+	else if(symbol == '+' || symbol == '-')   
 	{
 		return(1);
 	}
@@ -51,13 +51,13 @@ void main()
                     elem=pop(); /* Remove ( */
                 }
                 else
-                {
+                {       /* Operator */
                     while( pr(stack[top]) >= pr(ch) )
                         postfix[k++]=pop();
                     push(ch);
                 }
     }
-    while( stack[top] != '#') 
+    while( stack[top] != '#')
         postfix[k++]=pop();
     postfix[k]='\0';
     printf("\nPostfix Expression =  %s\n",postfix);
