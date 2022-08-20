@@ -1,0 +1,25 @@
+//write a program to find transpose of given 3x3 matrix using array with pointer.
+#include<stdio.h>
+int main()
+{
+    int *m1[3][3];
+    int a[3][3],b[3][3],i,j;
+    printf("enter the elements of the first matrix\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+            m1[i][j]=&a[j][i];
+        }
+    }
+    printf("the transpose matrix is\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+    {
+        printf("%d\t",*m1[i][j]);
+    }
+    printf("\n");
+    }
+}
