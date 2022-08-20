@@ -1,0 +1,37 @@
+//3.	WAP to find sum of any 3x3 matrix by using array with pointer.
+#include<stdio.h>
+int main()
+{
+    int *m1[3][3],*m2[3][3];
+    int a[3][3],b[3][3],i,j,sum[3][3];
+    printf("enter the elements of the first matrix\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+            m1[i][j]=&a[i][j];
+        }
+    }
+
+   printf("enter the elements of the second matrix\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);
+            m2[i][j]=&b[i][j];
+        }
+    }
+       printf("the sum of the two matrix is \n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            
+           sum[i][j]= *m1[i][j]+*m2[i][j];
+           printf("%d\t",sum[i][j]);
+        }
+        printf("\n");
+    }
+}
